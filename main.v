@@ -2,16 +2,56 @@ import ui
 
 struct App {
 mut:
-	first_name string
-	last_name string
 	window &ui.Window
-	rows []&ui.Layout
+	text string
 }
+
+struct Player {
+mut:
+	username string
+}
+
+struct Players {
+mut:
+	players []&Player
+}
+
+const (
+	playerWidth = 60
+	playerHeight = 20
+	playerPadding = 5
+)
 
 fn main() {
 
 	mut app := &App{
 		window: 0
+	}
+
+	mut players := &Players{
+		&Player{
+			player.username
+		},
+		&Player {
+			player.username
+		}
+	}
+
+	children = [
+		ui.textbox(
+			text: &app.text
+			placeholder: '0'
+			width: 135
+		),
+	]
+
+	for player in players {
+		children << ui.row(
+			spacing: playerPadding,
+			height: playerHeight,
+			widths: ui.stretch
+
+		)
 	}
 
 	ui.window(
