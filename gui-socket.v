@@ -53,12 +53,13 @@ fn main() {
 							),
 							ui.row(
 								children: [
-									// Issue with this textbox causing a Unhandled Exception 0xC0000005
+									// Issue with this textbox causing a Unhandled Exception 0xC0000005 - mode multiline fixes this
 									ui.textbox(
 										text: &app.text
 										placeholder: "Enter your message..."
 										width: 20
 										read_only: false
+										mode: .multiline
 									),
 								]
 							)
