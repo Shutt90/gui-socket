@@ -5,6 +5,11 @@ struct App {
 mut:
 	window &ui.Window
 	submit &ui.Button
+	messages []&Message
+}
+
+struct Message {
+mut:
 	message string
 }
 
@@ -46,10 +51,7 @@ fn main() {
 										id: "chat_zone"
 										height: win_height
 										width: win_width
-										items: {
-											"player": "hello"
-											"playerthree": "hi"
-										}
+										items: get_messages
 									)
 								]
 							),
@@ -82,7 +84,19 @@ fn main() {
 	
 }
 
-fn btn_submit_message(mut app App, x voidptr) {
-	println("$app.message")
+fn btn_submit_message(btn &ui.Button) {
+	new_message := Message{
+		message: app.message // first_name.text
+	}
+
+	app.messages << new_message
+	app.label.set_text("$app.messages")
+
+}
+
+fn get_messages() {
+	mut app.messages map[string]string
+
+	return 
 
 }
