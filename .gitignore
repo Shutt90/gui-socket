@@ -1,0 +1,9 @@
+# Binaries for programs and plugins
+main
+gui-socket
+*.exe
+*.exe~
+*.so
+*.dylib
+*.dll
+vls.log
